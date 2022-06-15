@@ -1,5 +1,3 @@
-[Laravel Group By with Pagination Shared](https://kind-mare-bbb.notion.site/Laravel-Group-By-with-Pagination-Shared-332d5a4fb99e4ab196c1d7199ec48d88)
-
 # Laravel Group By with Pagination Shared
 
 # “Great achievement is usually born of great sacrifice, and is never the result of selfishness.”~ Napoleon Hill
