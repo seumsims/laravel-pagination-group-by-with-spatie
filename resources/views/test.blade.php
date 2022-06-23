@@ -13,7 +13,14 @@
 <div>
     @foreach ($data as $date=> $post)
 
-        <div class="grad1">{{ date('D d M', strtotime($date))}}</div>
+        <div class="grad1"> @foreach ($post as $item)
+
+            <h1 class="k_1">
+                {{-- <a> {{dd($item->date)}}</a> --}}
+                <a> {{$item->date}}</a>
+                @break
+            </h1>
+        @endforeach</div>
 
         @foreach ($post as $item)
 
