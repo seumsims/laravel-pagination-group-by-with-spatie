@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-#use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Tester;
 use Illuminate\Http\Request;
 
@@ -15,8 +15,9 @@ class TesterController extends Controller
      */
     public function index()
     {
-        $some_names = Tester::get();
-        $names = collect($some_names)->paginate(5);
+        #$some_names = Tester::get();
+        #$names = collect($some_names)->paginate(5);
+        $names = DB::table('names')->groupBy('date')->get()->paginate(1);
 
         return view('test', compact('names'));
     }

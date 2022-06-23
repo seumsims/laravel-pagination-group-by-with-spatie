@@ -13,6 +13,7 @@
 <div>
     @foreach($names as $name)
         <h2>{{ $name->name }}</h2>
+        <h2>{{ $name->date }}</h2>
 
     @endforeach
 {{ $names->links() }}
