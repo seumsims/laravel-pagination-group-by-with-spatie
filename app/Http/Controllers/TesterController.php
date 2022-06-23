@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\Tester;
 use Illuminate\Http\Request;
@@ -17,9 +18,12 @@ class TesterController extends Controller
     {
         #$some_names = Tester::get();
         #$names = collect($some_names)->paginate(5);
-        $names = DB::table('names')->groupBy('date')->get()->paginate(1);
+        #$names = DB::table('names')->groupBy('date')->get()->paginate(2);
+        $data = Tester::latest()->orderBy('date', 'desc')->get()->groupBy('date')->paginate(1);
+        #dd($data->total());
+        #dd($data);
 
-        return view('test', compact('names'));
+        return view('test', compact('data'));
     }
 
     /**
@@ -35,7 +39,7 @@ class TesterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -46,7 +50,7 @@ class TesterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tester  $tester
+     * @param \App\Models\Tester $tester
      * @return \Illuminate\Http\Response
      */
     public function show(Tester $tester)
@@ -57,7 +61,7 @@ class TesterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tester  $tester
+     * @param \App\Models\Tester $tester
      * @return \Illuminate\Http\Response
      */
     public function edit(Tester $tester)
@@ -68,8 +72,8 @@ class TesterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tester  $tester
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Tester $tester
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Tester $tester)
@@ -80,7 +84,7 @@ class TesterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tester  $tester
+     * @param \App\Models\Tester $tester
      * @return \Illuminate\Http\Response
      */
     public function destroy(Tester $tester)

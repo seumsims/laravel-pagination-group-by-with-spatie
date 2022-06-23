@@ -11,12 +11,22 @@
 <div><h1>Test</h1></div>
 {{--dd($names)--}}
 <div>
-    @foreach($names as $name)
-        <h2>{{ $name->name }}</h2>
-        <h2>{{ $name->date }}</h2>
+    @foreach ($data as $date=> $post)
 
+        <div class="grad1">{{ date('D d M', strtotime($date))}}</div>
+
+        @foreach ($post as $item)
+
+            <h1 class="k_1">
+                <a> {{$item->name}}</a>
+            </h1>
+        @endforeach
     @endforeach
-{{ $names->links() }}
+
+    {{-- <a href="{{$paginator->nextPageUrl()}}">next</a> --}}
+    @for ($i = 1; $i < $data->total(); $i++)
+        <a href="?page={{$i}}"> {{$i}} </a>
+    @endfor
 </div>
 
 </body>
