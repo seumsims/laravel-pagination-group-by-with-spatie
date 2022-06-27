@@ -19,7 +19,7 @@ class TesterController extends Controller
         #$some_names = Tester::get();
         #$names = collect($some_names)->paginate(5);
         #$names = DB::table('names')->groupBy('date')->get()->paginate(2);
-        $data = Tester::latest()->orderBy('date', 'desc')->get()->groupBy('date')->paginate(1);
+        $data = Tester::latest()->orderBy('date', 'desc')->get()->groupBy('date')->paginate(2);
         #dd($data->total());
         #dd($data);
 
