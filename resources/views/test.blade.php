@@ -8,7 +8,7 @@
     <title>Test</title>
 </head>
 <body>
-<div><h1>Test</h1></div>
+<div></div>
 {{--dd($names)--}}
 <div>
     @foreach ($data as $date=> $post)
