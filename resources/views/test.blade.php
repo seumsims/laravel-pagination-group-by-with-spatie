@@ -17,7 +17,7 @@
 
             <h1 class="k_1">
                 {{-- <a> {{dd($item->date)}}</a> --}}
-                <a> {{$item->date}}</a>
+                <a> {{$item->CurrentDate}}</a>
                 @break
             </h1>
         @endforeach</div>
